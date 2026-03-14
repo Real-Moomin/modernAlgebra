@@ -88,6 +88,16 @@ body {
   padding-top: 40px;
 }
 
+.section-intro p {
+  font-size: 0.765rem !important;
+  opacity: 0.8;
+}
+
+.section-intro p:last-child{
+  margin: 0;
+}
+
+
 .intro h1 {
   font-size: 1.6rem;
   font-weight: 600;
@@ -253,6 +263,20 @@ body {
   margin: 0 0 0.75rem;
   padding-bottom: 0.4rem;
   border-bottom: 2px solid var(--accent-soft);
+}
+
+.section-intro {
+  margin: 0.4rem 0 0.9rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-touch);
+  border: 1px dashed var(--border-soft);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.section-intro p {
+  margin: 0.15rem 0;
 }
 
 .section h3 {

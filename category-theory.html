@@ -39,6 +39,10 @@
 
     <section id="category" class="section">
       <h2>1. 범주</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 대상과 사상, 합성·항등사상으로 이루어진 범주의 정의를 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “무엇인가와 그것들 사이의 ‘화살’만 있으면 구조가 될 수 있을까?”</p>
+      </div>
       <p>
         <strong>범주(category)</strong> \(\mathcal{C}\)는 (1) <strong>대상(objects)</strong>의 모임, (2) 두 대상 \(A, B\)마다 <strong>사상(morphisms)</strong> \(\mathrm{Hom}(A,B)\)의 집합, (3) 사상의 합성 \(\circ\) (결합법칙), (4) 각 대상마다 항등사상 \(\mathrm{id}_A\)가 있어 결합법칙과 항등원 법칙을 만족하는 구조입니다.
       </p>
@@ -77,6 +81,10 @@
 
     <section id="functor" class="section">
       <h2>2. 함자</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 한 범주에서 다른 범주로 “구조를 보존하며” 대응시키는 함자를 정의하고 예를 안다.</p>
+        <p><strong>들어가기 전에</strong>: “군을 집합으로, 규칙만 잊고 보내는 것—그런 ‘번역’을 수학적으로 어떻게 다룰까?”</p>
+      </div>
       <p>
         두 범주 \(\mathcal{C}, \mathcal{D}\) 사이의 <strong>함자(functor)</strong> \(F : \mathcal{C} \to \mathcal{D}\)는 대상을 대상으로, 사상을 사상으로 대응시키며 \(F(g \circ f) = F(g) \circ F(f)\), \(F(\mathrm{id}_A) = \mathrm{id}_{F(A)}\)를 만족하는 “구조를 보존하는” 대응입니다.
       </p>
@@ -96,6 +104,10 @@
 
     <section id="natural" class="section">
       <h2>3. 자연변환</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 두 함자 사이의 “일관된 연결”인 자연변환을 정의하고, 동형인 경우 동치를 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “두 가지 번역 규칙 \(F, G\)가 있을 때, \(F\) 결과를 \(G\) 결과로 바꾸는 ‘같은 방식’이 있을까?”</p>
+      </div>
       <p>
         두 함자 \(F, G : \mathcal{C} \to \mathcal{D}\) 사이의 <strong>자연변환(natural transformation)</strong> \(\eta : F \Rightarrow G\)는 각 대상 \(A \in \mathcal{C}\)마다 사상 \(\eta_A : F(A) \to G(A)\)를 주어, 모든 사상 \(f : A \to B\)에 대해 \(\eta_B \circ F(f) = G(f) \circ \eta_A\)가 성립하도록 하는 것입니다. “함자들 사이의 사상”이라고 보면 됩니다.
       </p>
@@ -114,6 +126,10 @@
 
     <section id="universal" class="section">
       <h2>4. 보편성</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: “모든 다른 대상에서 여기로 오는 표준적인 길이 정확히 하나”인 보편 성질을 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “곱·쌍대곱처럼 ‘가장 작은/가장 큰’ 대상을 유일하게 정하는 조건은 어떻게 쓸까?”</p>
+      </div>
       <p>
         어떤 성질을 만족하는 대상 중 “모든 다른 대상을 그쪽으로 한 번만 연결할 수 있는” 대상을 <strong>보편 대상(universal object)</strong>이라 합니다. 예: 두 군의 곱(product) \(G \times H\), 두 집합의 쌍대곱(coproduct)인 이산합 등.
       </p>
@@ -133,6 +149,10 @@
 
     <section id="limits" class="section">
       <h2>5. 극한과 여극한</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 함자(그래프)의 극한·여극한으로 곱·동등자·쌍대곱 등을 통일해 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “여러 대상을 한곳으로 모으는 것, 한곳에서 뻗어 나가는 것—둘 다 ‘보편적’으로 정의할 수 있을까?”</p>
+      </div>
       <p>
         작은 범주 \(J\)에서 \(\mathcal{C}\)로 가는 함자(그래프라고 부름)가 주어졌을 때, 그 <strong>극한(limit)</strong>은 “그래프의 모든 화살을 한곳으로 모으는” 보편적 대상입니다. <strong>여극한(colimit)</strong>은 “그래프의 모든 화살이 한곳에서 나오는” 보편적 대상입니다.
       </p>

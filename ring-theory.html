@@ -44,6 +44,10 @@
 
     <section id="def" class="section">
       <h2>1. 환의 정의</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 덧셈(가환군)과 곱셈(결합·분배)이 함께 있는 환의 정의를 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “점수를 더하기도 하고 배수도 적용하는 구조를 하나의 ‘수학적 구조’로 볼 수 있을까?”</p>
+      </div>
       <p>
         <strong>환(ring)</strong> \(R\)은 집합에 덧셈(\(+\))과 곱셈(\(\cdot\)) 두 연산이 정의되어 다음을 만족할 때를 말합니다.
       </p>
@@ -101,6 +105,10 @@
 
     <section id="commutative" class="section">
       <h2>2. 가환환</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 곱셈의 순서가 바뀌어도 같은 결과가 나오는 가환환을 구분할 수 있다.</p>
+        <p><strong>들어가기 전에</strong>: “2배 후 3배나 3배 후 2배나 결과가 같은 환은 어떤 게 있을까?”</p>
+      </div>
       <p>모든 \(a,b \in R\)에 대해 \(ab = ba\)이면 <strong>가환환(commutative ring)</strong>이라고 합니다. 정수, 다항식환, 많은 수 체계가 가환환입니다.</p>
       <div class="analogy">
         <strong>비유</strong>: “2배 후 3배”나 “3배 후 2배”나 결과가 같은 것처럼, 곱셈 순서를 바꿔도 결과가 같으면 가환입니다.
@@ -117,6 +125,10 @@
 
     <section id="unity" class="section">
       <h2>3. 단위원</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 곱셈의 항등원 1이 있는 환(단위원을 가진 환)을 구분한다.</p>
+        <p><strong>들어가기 전에</strong>: “곱했을 때 그대로인 ‘1’이 꼭 있어야 할까? 없는 환도 있나?”</p>
+      </div>
       <p>곱셈에 대한 항등원 \(1 \in R\)(즉 \(1 \cdot a = a \cdot 1 = a\))이 있으면 <strong>단위원(unity)을 가진 환</strong>이라고 합니다. 보통 “환”이라 하면 단위원 \(1 \neq 0\)을 갖는 것을 많이 다룹니다.</p>
       <div class="example">
         <div class="label">예시</div>
@@ -130,6 +142,10 @@
 
     <section id="zerodiv" class="section">
       <h2>4. 영인수</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 0이 아닌 두 원소의 곱이 0이 되는 영인수 개념을 이해하고, 정역과 구분한다.</p>
+        <p><strong>들어가기 전에</strong>: “둘 다 0이 아닌데 곱하면 0이 되는 수가 있다면, 그건 어떤 구조일까?”</p>
+      </div>
       <p>\(a \neq 0\), \(b \neq 0\)인데 \(ab = 0\)이면 \(a\)를 <strong>왼쪽 영인수</strong>, \(b\)를 <strong>오른쪽 영인수</strong>라고 합니다. 가환환이면 그냥 <strong>영인수(zero divisor)</strong>라고 합니다.</p>
       <div class="analogy">
         <strong>친숙한 비유: “곱하면 없어지는” 조합</strong>
@@ -159,6 +175,10 @@
 
     <section id="domain" class="section">
       <h2>5. 정역</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 영인수가 없는 정역에서 소거법칙이 성립함을 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “정수처럼 \(ab=ac\)이고 \(a \neq 0\)이면 \(b=c\)가 되는 환은 어떤 조건일까?”</p>
+      </div>
       <p>단위원을 갖는 가환환 \(R\)에서 \(0\)이 아닌 두 원소의 곱이 절대 \(0\)이 아니면(즉 영인수가 없으면) <strong>정역(integral domain)</strong>입니다. 정수 \(\mathbb{Z}\), 체 위의 다항식환 등이 정역입니다.</p>
       <p>정역에서는 \(ab = ac\)이고 \(a \neq 0\)이면 \(b = c\)(소거법칙)가 성립합니다.</p>
       <div class="example">
@@ -173,6 +193,10 @@
 
     <section id="field" class="section">
       <h2>6. 체</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 0이 아닌 모든 원소가 곱셈 역원을 가지는 체를 정의하고, 정역·환과의 관계를 안다.</p>
+        <p><strong>들어가기 전에</strong>: “나눗셈이 항상 가능한 수의 세계를 하나의 구조로 어떻게 정의할까?”</p>
+      </div>
       <p>단위원을 갖는 가환환 \(R\)에서 \(0\)이 아닌 모든 원소가 곱셈에 대해 역원을 가지면 <strong>체(field)</strong>입니다. \(\mathbb{Q}, \mathbb{R}, \mathbb{C}\), 그리고 소수 \(p\)에 대한 \(\mathbb{Z}/p\mathbb{Z}\)가 체입니다.</p>
       <div class="analogy">
         <strong>비유</strong>: “나눗셈이 항상 가능한” 수의 세계. 보드게임에서 “점수를 절반으로 줄이기”가 항상 한 가지 방법으로만 결정되는 구조라고 보면 됩니다.
@@ -189,6 +213,10 @@
 
     <section id="ideal" class="section">
       <h2>7. 아이디얼</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: “\(R\)이 흡수하는” 부분집합인 아이디얼을 정의하고, 몫환의 재료로 쓸 수 있음을 안다.</p>
+        <p><strong>들어가기 전에</strong>: “몫을 만들 때 ‘0으로 볼 것들’의 집합은 어떤 조건을 만족해야 할까?”</p>
+      </div>
       <p>환 \(R\)의 부분집합 \(I\)가 (1) 덧셈에 대해 부분군, (2) \(a \in I,\, r \in R \Rightarrow ra \in I,\, ar \in I\)를 만족하면 <strong>아이디얼(ideal)</strong>이라고 합니다. “\(R\)이 \(I\)를 흡수한다”는 느낌입니다.</p>
       <div class="analogy">
         <strong>친숙한 비유: “무시해도 되는 것들”의 묶음</strong>
@@ -218,6 +246,10 @@
 
     <section id="quotient-ring" class="section">
       <h2>8. 몫환</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 동치류 \(r+I\) 위에 덧셈·곱셈이 잘 정의되어 몫환 \(R/I\)가 됨을 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “아이디얼을 0으로 둔 뒤 남는 ‘나머지’들끼리 더하고 곱할 수 있을까?”</p>
+      </div>
       <p>\(I\)가 환 \(R\)의 아이디얼일 때, 동치류 \(r + I\)들의 집합에 \((r+I)+(s+I)=(r+s)+I\), \((r+I)(s+I)=rs+I\)로 연산을 주면 환이 됩니다. 이를 <strong>몫환(quotient ring)</strong> \(R/I\)라고 합니다.</p>
       <p>\(\mathbb{Z}/n\mathbb{Z}\)가 대표적인 몫환입니다.</p>
       <div class="example">
@@ -232,6 +264,10 @@
 
     <section id="homomorphism" class="section">
       <h2>9. 환 준동형</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 덧셈·곱셈을 보존하는 환 준동형과 그 핵(아이디얼), 동형정리를 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “두 환을 비교할 때 ‘더하기와 곱하기 구조’를 같이 보존하는 함수는 어떻게 정의할까?”</p>
+      </div>
       <p>두 환 \(R, S\) 사이의 함수 \(\phi : R \to S\)가 \(\phi(a+b)=\phi(a)+\phi(b)\), \(\phi(ab)=\phi(a)\phi(b)\)를 만족하고, 보통 \(\phi(1_R)=1_S\)를 요구하면 <strong>환 준동형(ring homomorphism)</strong>입니다. 군 준동형처럼 “구조를 보존”합니다.</p>
       <p>핵 \(\ker \phi = \{ r \in R : \phi(r)=0 \}\)는 항상 아이디얼이 됩니다.</p>
       <div class="example">
@@ -246,6 +282,10 @@
 
     <section id="pid-ufd" class="section">
       <h2>10. PID / UFD</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 모든 아이디얼이 한 원소로 생성되는 PID, 유일인수분해가 되는 UFD를 구분한다.</p>
+        <p><strong>들어가기 전에</strong>: “정수의 소인수분해처럼, 환에서도 ‘쪼개지는 단위’가 유일하게 정해질 수 있을까?”</p>
+      </div>
       <p>
         <strong>PID(주아이디얼정역)</strong>: 정역인데, 모든 아이디얼이 “한 원소로 생성”되는 환. 즉 모든 아이디얼이 \((a) = aR\) 형태. \(\mathbb{Z}\), 체 위의 1변수 다항식환 등.
       </p>

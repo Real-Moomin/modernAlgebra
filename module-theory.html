@@ -40,6 +40,10 @@
 
     <section id="def" class="section">
       <h2>1. 모듈 정의</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 환 위의 모듈 개념을 벡터공간과 비교해 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “정수 배, 두 배, 세 배… 이런 느낌을 ‘벡터공간 말고’ 더 넓게 쓸 수 없을까?”</p>
+      </div>
       <p>
         환 \(R\) 위의 <strong>왼쪽 \(R\)-모듈(module)</strong> \(M\)은 가환군 \((M,+)\)에 “스칼라 곱” \(R \times M \to M\)이 정의되어
         \(r(m+n)=rm+rn\), \((r+s)m=rm+sm\), \((rs)m=r(sm)\), \(1_R \cdot m = m\)을 만족하는 구조입니다.
@@ -63,6 +67,10 @@
 
     <section id="submodule" class="section">
       <h2>2. 부분모듈</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 부분모듈이 벡터공간의 부분공간·아이디얼과 어떻게 연결되는지 파악한다.</p>
+        <p><strong>들어가기 전에</strong>: “팀 안에서 ‘이 사람들끼리만 돌려도 일 다 되는’ 작은 팀을 고른다면, 그게 수학에선 뭘까?”</p>
+      </div>
       <p>\(M\)이 \(R\)-모듈일 때, 부분집합 \(N \subseteq M\)이 덧셈에 대해 닫혀 있고 \(r \in R,\, n \in N \Rightarrow rn \in N\)이면 <strong>부분모듈(submodule)</strong>입니다. 벡터 공간의 부분공간과 같은 역할입니다.</p>
       <div class="example">
         <div class="label">예시</div>
@@ -76,6 +84,10 @@
 
     <section id="homomorphism" class="section">
       <h2>3. 모듈 준동형</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 모듈 사이의 선형사상과 그 핵·상을 이해하고, 동형정리의 형태를 익힌다.</p>
+        <p><strong>들어가기 전에</strong>: “어떤 일을 다른 방식으로 표현해도, ‘양·방향’ 느낌은 그대로인 경우가 있지 않을까?”</p>
+      </div>
       <p>두 \(R\)-모듈 \(M, N\) 사이의 함수 \(f : M \to N\)이 \(f(m+m')=f(m)+f(m')\), \(f(rm)=r f(m)\)을 만족하면 <strong>\(R\)-선형사상(모듈 준동형)</strong>입니다.</p>
       <p>핵 \(\ker f\)와 상 \(\mathrm{Im}\,f\)는 각각 \(M\)의 부분모듈, \(N\)의 부분모듈입니다.</p>
       <div class="example">
@@ -91,6 +103,10 @@
 
     <section id="free" class="section">
       <h2>4. 자유모듈</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 자유모듈의 정의와 예시, 보편 성질을 통해 “기저가 있는 모듈”을 감각적으로 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “블럭 몇 개만 있으면 어떤 레고 모델이든 만들 수 있다면, 그 블럭들은 수학에선 뭘까?”</p>
+      </div>
       <p>어떤 집합 \(X\)에 대해 “\(X\)의 원소들의 \(R\) 위 형식적 선형결합” 전체를 <strong>자유 \(R\)-모듈</strong> \(R^{(X)}\)라고 합니다. \(X\)가 유한 개 \(n\)개이면 \(R^n\)과 동형입니다.</p>
       <p>“기저”가 있는 모듈이라고 볼 수 있지만, 일반 환 위에서는 모든 모듈이 자유인 것은 아닙니다.</p>
       <div class="analogy">
@@ -108,6 +124,10 @@
 
     <section id="noether" class="section">
       <h2>5. Noether 모듈</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: “증가하는 부분모듈 열이 멈춘다”는 조건이 왜 중요한지, Noether 모듈/환의 예를 통해 느낀다.</p>
+        <p><strong>들어가기 전에</strong>: “폴더를 계속 쪼개다 보면 어느 순간부터는 더 안 쪼개고 싶어지잖아? 그 느낌을 수학으로 옮기면?”</p>
+      </div>
       <p>\(R\)-모듈 \(M\)이 <strong>Noether</strong>라는 것은 부분모듈의 증가열 \(N_1 \subseteq N_2 \subseteq \cdots\)이 항상 유한 단계에서 멈춘다는 뜻입니다(\(N_k = N_{k+1} = \cdots\)). 환 \(R\)이 자기 자신을 \(R\)-모듈로 볼 때 Noether이면 <strong>Noether 환</strong>입니다.</p>
       <p>Noether 조건은 “유한 생성” 등과 밀접하게 연결되어 대수학 전반에서 중요합니다.</p>
       <div class="example">
@@ -122,6 +142,10 @@
 
     <section id="structure" class="section">
       <h2>6. 구조정리</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 유한 생성 가환군·PID 위 유한 생성 모듈이 순환 성분의 직합으로 유일하게 쪼개짐을 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “복잡한 악보도 ‘코드 진행 + 리듬 패턴’처럼 몇 가지 조각으로만 설명할 수 있다면, 모듈도 그럴까?”</p>
+      </div>
       <p>
         <strong>유한 생성 가환군의 기본정리</strong>: 유한 생성 \(\mathbb{Z}\)-모듈(즉 가환군)은 순환군의 직합으로 유일하게 분해됩니다.
       </p>

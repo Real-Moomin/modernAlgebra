@@ -41,6 +41,10 @@
 
     <section id="def" class="section">
       <h2>1. 체의 정의</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 덧셈·곱셈·나눗셈(0 제외)이 자유로운 체의 정의를 환·정역과 비교해 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “유리수, 실수처럼 네 가지 연산이 막힘 없이 가능한 공간을 어떻게 하나의 구조로 정의할까?”</p>
+      </div>
       <p>
         <strong>체(field)</strong> \(F\)는 덧셈과 곱셈이 정의된 집합으로, \((F,+)\)는 가환군, \((F \setminus \{0\}, \cdot)\)도 가환군이며, 분배법칙이 성립하는 구조입니다. 즉 “덧셈·곱셈·나눗셈(0 제외)이 자유로운 수의 세계”입니다.
       </p>
@@ -59,6 +63,10 @@
 
     <section id="extension" class="section">
       <h2>2. 체 확장</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: \(K/F\) 체 확장과 확장 차수 \([K:F]\)를 정의하고, 중간체가 있으면 차수가 곱해짐을 안다.</p>
+        <p><strong>들어가기 전에</strong>: “수의 세계를 더 넓은 체로 넓힐 때, 그 ‘넓이’를 어떻게 재는 걸까?”</p>
+      </div>
       <p>체 \(K\)가 체 \(F\)를 부분체로 포함할 때(즉 \(F \subseteq K\)이고 \(F\)의 연산이 \(K\)의 연산과 맞을 때) <strong>\(K\)는 \(F\)의 체 확장(field extension)</strong>이라고 하고 \(K/F\)로 씁니다.</p>
       <p>예: \(\mathbb{C}/\mathbb{R}\), \(\mathbb{R}/\mathbb{Q}\), \(\mathbb{Q}(\sqrt{2})/\mathbb{Q}\).</p>
       <div class="analogy">
@@ -82,6 +90,10 @@
 
     <section id="algebraic" class="section">
       <h2>3. 대수적 원소</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: \(F\) 위에서 다항식의 근이 되는 대수적 원소와, 그렇지 않은 초월적 원소를 구분한다.</p>
+        <p><strong>들어가기 전에</strong>: “추가한 수가 ‘어떤 방정식의 해’로 설명될 수 있을까, 아니면 완전히 자유로울까?”</p>
+      </div>
       <p>\(K/F\) 체 확장에서 \(\alpha \in K\)가 \(F\) 계수의 0이 아닌 다항식의 근이면 <strong>\(F\) 위에서 대수적(algebraic)</strong>이라고 합니다. 대수적이지 않으면 <strong>초월적(transcendental)</strong>입니다.</p>
       <p>예: \(\sqrt{2}\)는 \(\mathbb{Q}\) 위에서 대수적 (\(x^2-2=0\)). \(\pi\)는 \(\mathbb{Q}\) 위에서 초월적입니다.</p>
       <div class="example">
@@ -96,6 +108,10 @@
 
     <section id="minimal" class="section">
       <h2>4. 최소다항식</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 대수적 원소 \(\alpha\)를 근으로 갖는 차수가 가장 작은 모닉 다항식(최소다항식)이 기약임을 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “그 수를 ‘가장 짧게’ 설명하는 다항식은 하나로 정해질까?”</p>
+      </div>
       <p>\(F\) 위에서 대수적인 \(\alpha\)에 대해, \(\alpha\)를 근으로 갖는 \(F\) 계수 모닉(최고차계수 1) 다항식 중 차수가 가장 작은 것을 \(\alpha\)의 <strong>최소다항식(minimal polynomial)</strong> \(m_{\alpha,F}(x)\)라고 합니다. 이 다항식은 \(F\) 위에서 기약입니다.</p>
       <p>\(\mathbb{Q}\) 위에서 \(\sqrt{2}\)의 최소다항식은 \(x^2 - 2\)입니다.</p>
       <div class="example">
@@ -120,6 +136,10 @@
 
     <section id="splitting" class="section">
       <h2>5. 분해체</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: \(f(x)\)가 일차식 곱으로 완전히 쪼개지는 가장 작은 확장체인 분해체를 이해한다.</p>
+        <p><strong>들어가기 전에</strong>: “방정식 \(f(x)=0\)의 모든 해가 살 수 있는 가장 작은 확장 세계는 어떻게 만들까?”</p>
+      </div>
       <p>\(F\) 위 다항식 \(f(x)\)에 대해, \(f\)가 일차식들의 곱으로 완전히 인수분해되는 \(F\)의 확장체 \(K\)를 \(f\)의 <strong>분해체(splitting field)</strong>라고 합니다. 즉 \(f\)의 모든 근을 \(K\)가 포함하고, \(K\)는 그 근들로 \(F\) 위에서 생성됩니다.</p>
       <div class="analogy">
         <strong>비유</strong>: 방정식 \(f(x)=0\)의 “모든 해가 살 수 있는 가장 작은 확장 세계”를 만드는 것입니다.
@@ -136,6 +156,10 @@
 
     <section id="finite" class="section">
       <h2>6. 유한체</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 유한체의 크기가 \(p^n\) 꼴이고, 같은 크기면 동형으로 유일함을 안다.</p>
+        <p><strong>들어가기 전에</strong>: “몇 가지 상태만 있는 디지털 세계에서도 덧셈·곱셈·나눗셈이 모두 정의될 수 있을까?”</p>
+      </div>
       <p>원소 개수가 유한인 체를 <strong>유한체(finite field)</strong>라고 합니다. 유한체의 크기는 반드시 소수 \(p\)에 대해 \(p^n\) 꼴이고, 같은 크기의 유한체는 동형으로 유일합니다. 그 체를 \(\mathbb{F}_{p^n}\)으로 씁니다.</p>
       <p>\(\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}\)가 가장 기본적인 유한체입니다.</p>
       <div class="analogy">
@@ -153,6 +177,10 @@
 
     <section id="galois-intro" class="section">
       <h2>7. 갈루아 이론 입문</h2>
+      <div class="section-intro">
+        <p><strong>학습 목표</strong>: 체 확장과 그 대칭성(자기동형군)의 대응이 방정식 가해성과 연결됨을 맛본다.</p>
+        <p><strong>들어가기 전에</strong>: “방정식이 근의 공식으로 풀리는지, 왜 5차는 안 되는지—그 답이 ‘대칭’에 있다고?”</p>
+      </div>
       <p>갈루아 이론은 “체 확장”과 “그 확장의 대칭성(자기동형군)” 사이의 대응을 다룹니다. 정규 확장·분리 확장일 때 이 대응이 특히 잘 맞아, 방정식의 가해성(근의 공식 존재 여부)을 군론으로 해석할 수 있게 됩니다. 다음 4단계에서 자세히 다룹니다.</p>
     </section>
 

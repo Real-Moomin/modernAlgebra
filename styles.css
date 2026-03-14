@@ -84,6 +84,10 @@ body {
   padding-bottom: max(3rem, var(--safe-bottom));
 }
 
+.intro {
+  padding-top: 40px;
+}
+
 .intro h1 {
   font-size: 1.6rem;
   font-weight: 600;

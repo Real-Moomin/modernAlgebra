@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1a1b1e">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>4단계: 갈루아 이론 — 현대 대수학</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">현대 대수학</a>
+      <p class="tagline">보드게임과 친숙한 비유로 만나는 구조의 세계</p>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <div class="chapter-header">
+      <a href="index.html" class="back">← 목차로</a>
+      <h1>4단계: 갈루아 이론 (Galois Theory)</h1>
+      <p>체 확장의 대칭성과 방정식의 가해성.</p>
+    </div>
+
+    <nav class="chapter-nav" aria-label="이 단계 내 목차">
+      <ul>
+        <li><a href="#automorphism">1. 체 확장의 자기동형</a></li>
+        <li><a href="#galois-group">2. 갈루아 군</a></li>
+        <li><a href="#correspondence">3. 갈루아 대응</a></li>
+        <li><a href="#solvability">4. 다항식의 가해성</a></li>
+        <li><a href="#constructibility">5. 작도 문제</a></li>
+        <li><a href="#quintic">6. 5차 방정식 불가능성</a></li>
+      </ul>
+    </nav>
+
+    <section id="automorphism" class="section">
+      <h2>1. 체 확장의 자기동형</h2>
+      <p>
+        체 확장 \(K/F\)에서, \(K\)에서 \(K\)로 가는 동형사상 \(\sigma\) 중에서 \(F\)의 각 원소는 그대로 두는 것(\(\sigma(a)=a\) for all \(a \in F\))을 <strong>\(F\) 위의 \(K\) 자기동형(automorphism)</strong>이라고 합니다. “\(K\)를 움직이되 \(F\)는 고정”하는 대칭입니다.
+      </p>
+      <div class="analogy">
+        <strong>친숙한 비유: 근들을 서로 바꾸기</strong>
+        <p>
+          \(\mathbb{Q}(\sqrt{2})\)에서 \(\sqrt{2}\)를 \(-\sqrt{2}\)로 바꾸고, 유리수는 그대로 두면 전체가 체 구조를 유지합니다. 이게 “자기동형” 하나입니다. 방정식의 근들을 서로 맞바꾸는 것과 대응됩니다.
+        </p>
+      </div>
+    </section>
+
+    <section id="galois-group" class="section">
+      <h2>2. 갈루아 군</h2>
+      <p>
+        \(K/F\)에서 \(F\) 위의 \(K\) 자기동형들 전체는 합성에 대해 군을 이룹니다. 이를 <strong>갈루아 군(Galois group)</strong> \(\mathrm{Gal}(K/F)\)라고 합니다.
+      </p>
+      <p>예: \(\mathrm{Gal}(\mathbb{Q}(\sqrt{2})/\mathbb{Q})\)는 항등과 “\(\sqrt{2} \mapsto -\sqrt{2}\)” 두 원소뿐이므로 \(\mathbb{Z}/2\mathbb{Z}\)와 동형입니다.</p>
+    </section>
+
+    <section id="correspondence" class="section">
+      <h2>3. 갈루아 대응</h2>
+      <p>
+        \(K/F\)가 갈루아 확장(유한·정규·분리)일 때, “\(F\)와 \(K\) 사이의 중간체”와 “\(\mathrm{Gal}(K/F)\)의 부분군” 사이에 일대일 대응이 성립합니다. 이를 <strong>갈루아 대응(Galois correspondence)</strong>이라고 합니다.
+      </p>
+      <p>중간체 \(F \subseteq L \subseteq K\)에 부분군 \(H = \mathrm{Gal}(K/L)\)가 대응되고, 부분군 \(H\)에 고정체 \(K^H\)가 대응됩니다.</p>
+      <div class="analogy">
+        <strong>비유</strong>: “어디까지 고정할 것인가”와 “어떤 대칭만 허용할 것인가”가 서로 뒤집어지는 관계입니다.
+      </div>
+    </section>
+
+    <section id="solvability" class="section">
+      <h2>4. 다항식의 가해성</h2>
+      <p>
+        다항식 \(f(x)\)가 <strong>근의 공식으로 풀 수 있다(가해적, solvable)</strong>는 것은, 그 분해체가 “근호를 단계적으로 추가”해서 얻어지는 확장열에 포함된다는 뜻으로 정의됩니다. 이는 갈루아 군이 <strong>가해군(solvable group)</strong>인 것과 동치입니다.
+      </p>
+      <p>가해군: 교환자 열이 끝까지 가서 \(\{e\}\)에 도달하는 군.</p>
+    </section>
+
+    <section id="constructibility" class="section">
+      <h2>5. 작도 문제</h2>
+      <p>
+        자와 컴퍼스만으로 할 수 있는 연산은 “직선과 원”의 교점을 구하는 것이고, 이에 대응되는 수는 “제곱근을 유한 번 쌓은 확장”에 들어갑니다. 즉 확장의 차수가 2의 거듭제곱이어야 합니다.
+      </p>
+      <p>그래서 “세제곱 배적”이나 “각의 삼등분”은 일반적으로 작도 불가능함이 갈루아 이론으로 설명됩니다.</p>
+      <div class="analogy">
+        <strong>비유</strong>: 규칙이 “제곱근만 쓸 수 있다”로 제한되어 있어서, 세제곱근이 필요한 구조는 작도할 수 없습니다.
+      </div>
+    </section>
+
+    <section id="quintic" class="section">
+      <h2>6. 5차 방정식 불가능성</h2>
+      <p>
+        일반 5차 방정식 \(x^5 + ax^4 + \cdots = 0\)의 갈루아 군은 대칭군 \(S_5\)입니다. \(S_5\)는 가해군이 아니므로, 5차 일반 방정식은 (근호만으로는) 근의 공식이 존재하지 않습니다. 이게 <strong>아벨-루피니 정리</strong>와 갈루아 이론으로 증명되는 유명한 결과입니다.
+      </p>
+      <div class="analogy">
+        <strong>비유</strong>: “대칭이 너무 풍부해서” 그 대칭을 단계적으로 풀어나가는 구조(가해군)가 아니므로, 2·3·4차처럼 “단계적 근의 공식”이 5차에는 없습니다.
+      </div>
+
+      <div class="exercise">
+        <div class="label">연습문제 6-1</div>
+        <div class="problem">2차 방정식 \(ax^2+bx+c=0\)의 갈루아 군(일반적으로)은 무엇인가요? 왜 근의 공식이 존재하나요?</div>
+        <button type="button" class="toggle-solution">해설 보기</button>
+        <div class="solution">
+          <div class="label">해설</div>
+          <p>두 근 \(\alpha, \beta\)를 맞바꾸는 자기동형만 있으면 되므로 갈루아 군은 \(\mathbb{Z}/2\mathbb{Z}\)(2개 원소)입니다. 이 군은 가환군이므로 가해군입니다. 따라서 2차 방정식은 근의 공식(제곱근)으로 풀 수 있습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <nav class="site-footer-nav" aria-label="챕터 이동">
+        <a href="field-theory.html">← 3단계 체론</a>
+        <span class="sep">·</span>
+        <a href="module-theory.html">다음: 5단계 모듈 이론 →</a>
+      </nav>
+    </footer>
+  </main>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, { delimiters: [{ left: '\\(', right: '\\)', display: false }, { left: '\\[', right: '\\]', display: true }] });
+      }
+    });
+  </script>
+</body>
+</html>

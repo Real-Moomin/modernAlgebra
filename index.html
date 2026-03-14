@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1a1b1e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>현대 대수학 — 디자이너를 위한 친절한 가이드</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">현대 대수학</a>
+      <p class="tagline">보드게임과 친숙한 비유로 만나는 구조의 세계</p>
+    </div>
+  </header>
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'fmi8glp',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+  <main class="container main-content">
+    <section class="intro">
+      <h1>Modern Algebra Study</h1>
+      <p class="lead">
+        이 사이트는 <strong>이과가 아닌 분</strong>(특히 디자인·인문 계열)을 위해,
+        현대 대수학의 핵심을 <strong>보드게임, 일상, 시각적 비유</strong>와 함께 설명합니다.
+        정의만 나열하지 않고, "왜 이런 구조가 유용한지"에 초점을 맞춥니다.
+      </p>
+    </section>
+
+    <nav class="toc" aria-label="목차">
+      <h2>학습 순서</h2>
+      <ol class="step-list">
+        <li>
+          <a href="group-theory.html">
+            <span class="step-num">1단계</span>
+            <span class="step-title">군론 (Group Theory)</span>
+            <span class="step-desc">닫힘, 결합, 항등원, 역원 — ‘움직임’과 ‘대칭’의 수학</span>
+          </a>
+        </li>
+        <li>
+          <a href="ring-theory.html">
+            <span class="step-num">2단계</span>
+            <span class="step-title">환론 (Ring Theory)</span>
+            <span class="step-desc">덧셈과 곱셈이 공존하는 구조</span>
+          </a>
+        </li>
+        <li>
+          <a href="field-theory.html">
+            <span class="step-num">3단계</span>
+            <span class="step-title">체론 (Field Theory)</span>
+            <span class="step-desc">나눗셈까지 가능한 수의 세계</span>
+          </a>
+        </li>
+        <li>
+          <a href="galois-theory.html">
+            <span class="step-num">4단계</span>
+            <span class="step-title">갈루아 이론</span>
+            <span class="step-desc">방정식의 대칭성과 가해성</span>
+          </a>
+        </li>
+        <li>
+          <a href="module-theory.html">
+            <span class="step-num">5단계</span>
+            <span class="step-title">모듈 이론 (고급)</span>
+            <span class="step-desc">벡터의 일반화</span>
+          </a>
+        </li>
+        <li>
+          <a href="category-theory.html">
+            <span class="step-num">6단계</span>
+            <span class="step-title">범주론 맛보기</span>
+            <span class="step-desc">구조들 사이의 관계</span>
+          </a>
+        </li>
+      </ol>
+    </nav>
+
+    <footer class="site-footer">
+      <p>각 단계 페이지에서 <strong>개념 설명 → 연습문제 → 해설</strong> 순서로 학습할 수 있습니다.</p>
+    </footer>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>

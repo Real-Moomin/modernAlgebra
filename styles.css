@@ -1,0 +1,591 @@
+/* ===== 다크 모드 변수 ===== */
+:root {
+  --bg: #1a1b1e;
+  --bg-card: #222326;
+  --bg-elevated: #2a2b2f;
+  --text: #e8e6e3;
+  --text-muted: #9a9894;
+  --accent: #e07d5a;
+  --accent-soft: #3d2e29;
+  --accent-muted: #b86b4d;
+  --border: #36373b;
+  --border-soft: #2e2f33;
+  --success: #6bb88a;
+  --radius: 12px;
+  --radius-touch: 10px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --font-sans: 'Noto Sans KR', sans-serif;
+  --font-display: 'DM Serif Display', serif;
+  /* 모바일 터치 영역 */
+  --touch-min: 44px;
+  --safe-top: env(safe-area-inset-top, 0);
+  --safe-bottom: env(safe-area-inset-bottom, 0);
+  --safe-left: env(safe-area-inset-left, 0);
+  --safe-right: env(safe-area-inset-right, 0);
+}
+
+* {
+  box-sizing: border-box;
+  letter-spacing: -0.5px;
+  font-family: "pretendard", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  padding-left: max(1.25rem, var(--safe-left));
+  padding-right: max(1.25rem, var(--safe-right));
+}
+
+/* ===== 헤더 ===== */
+.site-header {
+  padding: 1.5rem 0;
+  padding-top: max(1.5rem, var(--safe-top));
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+  display: none;
+ 
+}
+
+.site-header .logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.site-header .tagline {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* ===== 메인 ===== */
+.main-content {
+  padding: 1.5rem 0 3rem;
+  padding-bottom: max(3rem, var(--safe-bottom));
+}
+
+.intro h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: var(--text);
+}
+
+.intro .lead {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* ===== 목차 ===== */
+.toc {
+  margin-top: 1.75rem;
+}
+
+.toc h2 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.step-list li {
+  margin-bottom: 0.5rem;
+}
+
+.step-list a {
+  display: block;
+  padding: 1rem 1.15rem;
+  min-height: var(--touch-min);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-touch);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.step-list a:hover,
+.step-list a:focus {
+  border-color: var(--accent-soft);
+  background: var(--bg-elevated);
+}
+
+.step-list a:active {
+  background: var(--accent-soft);
+}
+
+.step-num {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.step-desc {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* ===== 챕터 페이지 ===== */
+.chapter-header {
+  padding: 1.25rem 0 1rem;
+}
+
+.chapter-header h1 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin: 0 0 0.35rem;
+}
+
+.chapter-header .back {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 0.35rem;
+  display: inline-block;
+  padding: 0.35rem 0;
+  min-height: var(--touch-min);
+  line-height: 1.4;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.chapter-header .back:hover,
+.chapter-header .back:focus {
+  color: var(--accent);
+}
+
+.chapter-nav {
+  margin: 1rem 0 1.5rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chapter-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  min-width: min-content;
+}
+
+.chapter-nav a {
+  font-size: 0.8125rem;
+  padding: 0.5rem 0.7rem;
+  min-height: var(--touch-min);
+  min-width: var(--touch-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-elevated);
+  border-radius: 8px;
+  color: var(--text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.chapter-nav a:hover,
+.chapter-nav a:focus,
+.chapter-nav a.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ===== 섹션 ===== */
+.section {
+  margin: 1.75rem 0;
+  scroll-margin-top: 5rem;
+}
+
+.section h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--accent-soft);
+}
+
+.section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem 0 0.4rem;
+  color: var(--text);
+}
+
+.section p {
+  margin: 0 0 0.85rem;
+  color: var(--text);
+  font-size: 0.9375rem;
+}
+
+.section ul,
+.section ol {
+  margin: 0 0 0.85rem;
+  padding-left: 1.35rem;
+  font-size: 0.9375rem;
+}
+
+/* 비유 박스 */
+.analogy {
+  background: var(--bg-elevated);
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.15rem;
+  margin: 1rem 0;
+  border-radius: 0 var(--radius-touch) var(--radius-touch) 0;
+}
+
+.analogy strong {
+  color: var(--accent);
+}
+
+.analogy p:last-child {
+  margin-bottom: 0;
+}
+
+.analogy-design {
+  border-left-color: #5a7d9e;
+  background: #252830;
+}
+
+.analogy-design strong {
+  color: #7a9eb8;
+}
+
+/* 정의 박스 */
+.definition {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1rem 1.15rem;
+  margin: 1rem 0;
+  border-radius: var(--radius-touch);
+  box-shadow: var(--shadow);
+}
+
+.definition .label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.definition ul,
+.definition p {
+  font-size: 0.9375rem;
+}
+
+/* 연습문제 */
+.exercise {
+  margin: 1.5rem 0;
+  padding: 1rem 1.15rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-touch);
+  box-shadow: var(--shadow);
+}
+
+.exercise .label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--success);
+  margin-bottom: 0.4rem;
+}
+
+.exercise .problem {
+  margin: 0 0 0.75rem;
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+
+.toggle-solution {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-min);
+  padding: 0.6rem 1.1rem;
+  font-size: 0.875rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  margin-top: 0.35rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toggle-solution:hover,
+.toggle-solution:focus {
+  background: var(--accent);
+  color: #fff;
+}
+
+.toggle-solution:active {
+  transform: scale(0.98);
+}
+
+.solution {
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--border);
+  display: none;
+}
+
+.solution.open {
+  display: block;
+}
+
+.solution .label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.solution p {
+  font-size: 0.9375rem;
+}
+
+/* 수식 (KaTeX 오버라이드용) */
+.math-inline {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  padding: 0 0.15em;
+}
+
+/* KaTeX 다크 모드 */
+.katex,
+.katex .mord,
+.katex .mop,
+.katex .mbin,
+.katex .mrel,
+.katex .minner,
+.katex .mopen,
+.katex .mclose {
+  color: var(--text) !important;
+}
+
+.katex .mord .mord,
+.katex .mop .mop,
+.katex .mbin .mbin,
+.katex .mrel .mrel {
+  color: inherit !important;
+}
+
+/* 푸터 */
+.site-footer {
+  margin-top: 2.5rem;
+  padding: 1rem 0;
+  padding-bottom: max(1rem, var(--safe-bottom));
+  border-top: 1px solid var(--border);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+}
+
+.site-footer p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.site-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.site-footer-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.4rem 0;
+  min-height: var(--touch-min);
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.site-footer-nav a:hover,
+.site-footer-nav a:focus {
+  color: var(--accent);
+  border-bottom-color: var(--accent-muted);
+}
+
+.site-footer-nav .sep {
+  color: var(--border);
+  font-weight: 200;
+  user-select: none;
+}
+
+/* ===== 모바일 우선 보조 (작은 화면) ===== */
+@media (max-width: 480px) {
+  .container {
+    padding-left: max(1rem, var(--safe-left));
+    padding-right: max(1rem, var(--safe-right));
+  }
+
+  .site-header {
+    padding: 1.25rem 0;
+    padding-top: max(1.25rem, var(--safe-top));
+  }
+
+  .site-header .logo {
+    font-size: 1.35rem;
+  }
+
+  .intro h1 {
+    font-size: 1.4rem;
+  }
+
+  .step-list a {
+    padding: 1rem 1rem;
+  }
+
+  .chapter-header h1 {
+    font-size: 1.35rem;
+  }
+
+  .section h2 {
+    font-size: 1.1rem;
+  }
+
+  .section {
+    margin: 1.5rem 0;
+    scroll-margin-top: 4.5rem;
+  }
+
+  .analogy,
+  .definition,
+  .exercise {
+    padding: 1rem 1rem;
+  }
+}
+
+/* ===== 태블릿 이상 ===== */
+@media (min-width: 600px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .main-content {
+    padding: 2rem 0 4rem;
+  }
+
+  .site-header {
+    padding: 2rem 0;
+  }
+
+  .site-header .logo {
+    font-size: 1.75rem;
+  }
+
+  .intro h1 {
+    font-size: 1.85rem;
+  }
+
+  .intro .lead {
+    font-size: 1.05rem;
+  }
+
+  .chapter-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .section {
+    margin: 2.25rem 0;
+  }
+
+  .section h2 {
+    font-size: 1.35rem;
+  }
+
+  .section h3 {
+    font-size: 1.1rem;
+  }
+
+  .section p,
+  .section ul,
+  .section ol {
+    font-size: 1rem;
+  }
+
+  .step-list a {
+    padding: 1.1rem 1.25rem;
+  }
+
+  .step-title {
+    font-size: 1.05rem;
+  }
+
+  .step-desc {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .chapter-nav ul {
+    flex-wrap: wrap;
+  }
+
+  .chapter-nav a {
+    min-width: auto;
+  }
+
+  .site-footer-nav {
+    flex-direction: row;
+  }
+}

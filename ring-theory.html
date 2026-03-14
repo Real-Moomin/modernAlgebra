@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1a1b1e">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>2단계: 환론 — 현대 대수학</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">현대 대수학</a>
+      <p class="tagline">보드게임과 친숙한 비유로 만나는 구조의 세계</p>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <div class="chapter-header">
+      <a href="index.html" class="back">← 목차로</a>
+      <h1>2단계: 환론 (Ring Theory)</h1>
+      <p>덧셈과 곱셈이 함께 있는 구조입니다.</p>
+    </div>
+
+    <nav class="chapter-nav" aria-label="이 단계 내 목차">
+      <ul>
+        <li><a href="#def">1. 환의 정의</a></li>
+        <li><a href="#commutative">2. 가환환</a></li>
+        <li><a href="#unity">3. 단위원</a></li>
+        <li><a href="#zerodiv">4. 영인수</a></li>
+        <li><a href="#domain">5. 정역</a></li>
+        <li><a href="#field">6. 체</a></li>
+        <li><a href="#ideal">7. 아이디얼</a></li>
+        <li><a href="#quotient-ring">8. 몫환</a></li>
+        <li><a href="#homomorphism">9. 환 준동형</a></li>
+        <li><a href="#pid-ufd">10. PID / UFD</a></li>
+      </ul>
+    </nav>
+
+    <section id="def" class="section">
+      <h2>1. 환의 정의</h2>
+      <p>
+        <strong>환(ring)</strong> \(R\)은 집합에 덧셈(\(+\))과 곱셈(\(\cdot\)) 두 연산이 정의되어 다음을 만족할 때를 말합니다.
+      </p>
+      <div class="definition">
+        <div class="label">정의 (환)</div>
+        <ul>
+          <li>\((R, +)\)는 가환군(항등원 0).</li>
+          <li>곱셈은 결합법칙: \((ab)c = a(bc)\).</li>
+          <li>분배법칙: \(a(b+c)=ab+ac\), \((a+b)c=ac+bc\).</li>
+        </ul>
+        <p>곱셈의 항등원이 있을 필요는 없고, 곱셈이 가환일 필요도 없습니다.</p>
+      </div>
+      <div class="analogy">
+        <strong>친숙한 비유: “점수”와 “배수”가 공존하는 게임</strong>
+        <p>
+          보드게임에서 “점수를 더하기”와 “특정 칸에 도착하면 점수 2배” 같은 규칙이 같이 있을 수 있습니다. 덧셈은 “합산”, 곱셈은 “스케일을 주는 연산”으로 보면, 정수 \(\mathbb{Z}\)나 다항식들이 환의 대표 예시입니다.
+        </p>
+      </div>
+      <div class="analogy analogy-design">
+        <strong>디자인 비유: 레이어 합성과 블렌드</strong>
+        <p>
+          포토샵에서 레이어를 “더하기”(밝기 추가, 스크린 블렌드의 근본)와 “곱하기”(어두워지는 곱하기 블렌드)로 합성할 수 있습니다. 픽셀 값을 0~1로 두면, 덧셈에 해당하는 연산(클리핑 후)과 곱셈에 해당하는 연산이 함께 작동합니다. “색상 변환 행렬”(3×3 행렬로 RGB를 선형 변환)도 덧셈(효과 더하기)과 곱셈(변환 합성)이 있어 환을 이룹니다.
+        </p>
+      </div>
+
+      <div class="exercise">
+        <div class="label">연습문제 1-1</div>
+        <div class="problem">짝수 전체의 집합은 정수 덧셈·곱셈에 대해 환인가요?</div>
+        <button type="button" class="toggle-solution">해설 보기</button>
+        <div class="solution">
+          <div class="label">해설</div>
+          <p>덧셈에 대해 닫혀 있고, 곱셈에도 닫혀 있으며, 분배법칙은 \(\mathbb{Z}\)에서 물려받습니다. 하지만 덧셈의 항등원 0은 짝수이므로 있고, 역원 \(-n\)도 짝수이므로 가환군입니다. 따라서 환입니다. (단, 곱셈의 항등원 1은 없음 → “단위원을 가진 환”은 아님.)</p>
+        </div>
+      </div>
+      <div class="exercise">
+        <div class="label">연습문제 1-2 (디자인)</div>
+        <div class="problem">RGB 각 채널을 0~255 정수로 두고, 두 색 \((R_1,G_1,B_1)\)과 \((R_2,G_2,B_2)\)에 대해 “덧셈”을 성분별로 더한 뒤 256으로 나눈 나머지로 정의합니다. “곱셈”은 성분별로 곱한 뒤 256으로 나눈 나머지로 정의합니다. 이 덧셈과 곱셈으로 “색상들의 집합”이 환의 조건을 만족할까요? (힌트: 곱셈의 항등원이 있는지, 영인수가 생기는지 생각해 보세요.)</div>
+        <button type="button" class="toggle-solution">해설 보기</button>
+        <div class="solution">
+          <div class="label">해설</div>
+          <p>덧셈에 대해서는 \(\mathbb{Z}/256\mathbb{Z}\)의 세 번 직합이 되므로 가환군입니다. 곱셈은 결합법칙·분배법칙을 만족하고, \((1,1,1)\)이 곱셈의 항등원입니다. 따라서 <strong>환은 됩니다</strong>. 다만 \((2,0,0)\)과 \((128,0,0)\)을 곱하면 \((0,0,0)\)이 되므로 <strong>영인수</strong>가 존재해 정역은 아닙니다. 디자인에서 “완전 검정”과 “반투명 검정”을 곱하면 0에 가까워지는 것과 비슷합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="commutative" class="section">
+      <h2>2. 가환환</h2>
+      <p>모든 \(a,b \in R\)에 대해 \(ab = ba\)이면 <strong>가환환(commutative ring)</strong>이라고 합니다. 정수, 다항식환, 많은 수 체계가 가환환입니다.</p>
+      <div class="analogy">
+        <strong>비유</strong>: “2배 후 3배”나 “3배 후 2배”나 결과가 같은 것처럼, 곱셈 순서를 바꿔도 결과가 같으면 가환입니다.
+      </div>
+    </section>
+
+    <section id="unity" class="section">
+      <h2>3. 단위원</h2>
+      <p>곱셈에 대한 항등원 \(1 \in R\)(즉 \(1 \cdot a = a \cdot 1 = a\))이 있으면 <strong>단위원(unity)을 가진 환</strong>이라고 합니다. 보통 “환”이라 하면 단위원 \(1 \neq 0\)을 갖는 것을 많이 다룹니다.</p>
+    </section>
+
+    <section id="zerodiv" class="section">
+      <h2>4. 영인수</h2>
+      <p>\(a \neq 0\), \(b \neq 0\)인데 \(ab = 0\)이면 \(a\)를 <strong>왼쪽 영인수</strong>, \(b\)를 <strong>오른쪽 영인수</strong>라고 합니다. 가환환이면 그냥 <strong>영인수(zero divisor)</strong>라고 합니다.</p>
+      <div class="analogy">
+        <strong>친숙한 비유: “곱하면 없어지는” 조합</strong>
+        <p>
+          \(\mathbb{Z}/6\mathbb{Z}\)에서 \(2 \cdot 3 = 0\)입니다. 2도 3도 0이 아닌데 곱하면 0이 되므로, 2와 3은 영인수입니다. “서로 상쇄되는 규칙”이 있는 구조라고 보면 됩니다.
+        </p>
+      </div>
+
+      <div class="exercise">
+        <div class="label">연습문제 4-1</div>
+        <div class="problem">\(\mathbb{Z}/4\mathbb{Z}\)에서 영인수를 모두 찾으세요.</div>
+        <button type="button" class="toggle-solution">해설 보기</button>
+        <div class="solution">
+          <div class="label">해설</div>
+          <p>원소는 \(\bar{0}, \bar{1}, \bar{2}, \bar{3}\). \(\bar{2} \cdot \bar{2} = \bar{4} = \bar{0}\)이므로 \(\bar{2}\)가 영인수입니다. \(\bar{1}, \bar{3}\)은 가역원이므로 영인수가 아니고, \(\bar{0}\)은 정의상 제외합니다. 따라서 영인수는 \(\bar{2}\)뿐입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="domain" class="section">
+      <h2>5. 정역</h2>
+      <p>단위원을 갖는 가환환 \(R\)에서 \(0\)이 아닌 두 원소의 곱이 절대 \(0\)이 아니면(즉 영인수가 없으면) <strong>정역(integral domain)</strong>입니다. 정수 \(\mathbb{Z}\), 체 위의 다항식환 등이 정역입니다.</p>
+      <p>정역에서는 \(ab = ac\)이고 \(a \neq 0\)이면 \(b = c\)(소거법칙)가 성립합니다.</p>
+    </section>
+
+    <section id="field" class="section">
+      <h2>6. 체</h2>
+      <p>단위원을 갖는 가환환 \(R\)에서 \(0\)이 아닌 모든 원소가 곱셈에 대해 역원을 가지면 <strong>체(field)</strong>입니다. \(\mathbb{Q}, \mathbb{R}, \mathbb{C}\), 그리고 소수 \(p\)에 대한 \(\mathbb{Z}/p\mathbb{Z}\)가 체입니다.</p>
+      <div class="analogy">
+        <strong>비유</strong>: “나눗셈이 항상 가능한” 수의 세계. 보드게임에서 “점수를 절반으로 줄이기”가 항상 한 가지 방법으로만 결정되는 구조라고 보면 됩니다.
+      </div>
+    </section>
+
+    <section id="ideal" class="section">
+      <h2>7. 아이디얼</h2>
+      <p>환 \(R\)의 부분집합 \(I\)가 (1) 덧셈에 대해 부분군, (2) \(a \in I,\, r \in R \Rightarrow ra \in I,\, ar \in I\)를 만족하면 <strong>아이디얼(ideal)</strong>이라고 합니다. “\(R\)이 \(I\)를 흡수한다”는 느낌입니다.</p>
+      <div class="analogy">
+        <strong>친숙한 비유: “무시해도 되는 것들”의 묶음</strong>
+        <p>
+          정수에서 “3의 배수”만 모은 집합은 아이디얼입니다. 어떤 정수에 3의 배수를 곱하거나 더해도 여전히 3의 배수이기 때문입니다. 몫을 만들 때 “이 묶음을 0으로 보자”는 역할을 합니다.
+        </p>
+      </div>
+
+      <div class="exercise">
+        <div class="label">연습문제 7-1</div>
+        <div class="problem">\(\mathbb{Z}\)에서 “짝수 전체”는 아이디얼인가요?</div>
+        <button type="button" class="toggle-solution">해설 보기</button>
+        <div class="solution">
+          <div class="label">해설</div>
+          <p>예. 짝수 ± 짝수 = 짝수, 그리고 어떤 정수 \(n\)에 대해 \(n \times (짝수) = 짝수\)이므로 아이디얼 조건을 만족합니다. 이 아이디얼을 \(2\mathbb{Z}\)라고 씁니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="quotient-ring" class="section">
+      <h2>8. 몫환</h2>
+      <p>\(I\)가 환 \(R\)의 아이디얼일 때, 동치류 \(r + I\)들의 집합에 \((r+I)+(s+I)=(r+s)+I\), \((r+I)(s+I)=rs+I\)로 연산을 주면 환이 됩니다. 이를 <strong>몫환(quotient ring)</strong> \(R/I\)라고 합니다.</p>
+      <p>\(\mathbb{Z}/n\mathbb{Z}\)가 대표적인 몫환입니다.</p>
+    </section>
+
+    <section id="homomorphism" class="section">
+      <h2>9. 환 준동형</h2>
+      <p>두 환 \(R, S\) 사이의 함수 \(\phi : R \to S\)가 \(\phi(a+b)=\phi(a)+\phi(b)\), \(\phi(ab)=\phi(a)\phi(b)\)를 만족하고, 보통 \(\phi(1_R)=1_S\)를 요구하면 <strong>환 준동형(ring homomorphism)</strong>입니다. 군 준동형처럼 “구조를 보존”합니다.</p>
+      <p>핵 \(\ker \phi = \{ r \in R : \phi(r)=0 \}\)는 항상 아이디얼이 됩니다.</p>
+    </section>
+
+    <section id="pid-ufd" class="section">
+      <h2>10. PID / UFD</h2>
+      <p>
+        <strong>PID(주아이디얼정역)</strong>: 정역인데, 모든 아이디얼이 “한 원소로 생성”되는 환. 즉 모든 아이디얼이 \((a) = aR\) 형태. \(\mathbb{Z}\), 체 위의 1변수 다항식환 등.
+      </p>
+      <p>
+        <strong>UFD(유일인수분해정역)</strong>: 정역인데, 0이 아닌 원소가 “소원소(prime)”들의 곱으로 (순서·동료 차이만 있고) 유일하게 분해되는 환. PID이면 UFD입니다.
+      </p>
+      <div class="analogy">
+        <strong>비유</strong>: 정수에서 소인수분해가 “유일”한 것처럼, 환에서도 “쪼개지는 단위”가 잘 정의되어 유일하게 쪼개지면 UFD입니다.
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <nav class="site-footer-nav" aria-label="챕터 이동">
+        <a href="group-theory.html">← 1단계 군론</a>
+        <span class="sep">·</span>
+        <a href="field-theory.html">다음: 3단계 체론 →</a>
+      </nav>
+    </footer>
+  </main>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, { delimiters: [{ left: '\\(', right: '\\)', display: false }, { left: '\\[', right: '\\]', display: true }] });
+      }
+    });
+  </script>
+</body>
+</html>

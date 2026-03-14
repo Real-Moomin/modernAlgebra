@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1a1b1e">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>3단계: 체론 — 현대 대수학</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">현대 대수학</a>
+      <p class="tagline">보드게임과 친숙한 비유로 만나는 구조의 세계</p>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <div class="chapter-header">
+      <a href="index.html" class="back">← 목차로</a>
+      <h1>3단계: 체론 (Field Theory)</h1>
+      <p>체의 확장과 대수적 구조를 다룹니다.</p>
+    </div>
+
+    <nav class="chapter-nav" aria-label="이 단계 내 목차">
+      <ul>
+        <li><a href="#def">1. 체의 정의</a></li>
+        <li><a href="#extension">2. 체 확장</a></li>
+        <li><a href="#algebraic">3. 대수적 원소</a></li>
+        <li><a href="#minimal">4. 최소다항식</a></li>
+        <li><a href="#splitting">5. 분해체</a></li>
+        <li><a href="#finite">6. 유한체</a></li>
+        <li><a href="#galois-intro">7. 갈루아 이론 입문</a></li>
+      </ul>
+    </nav>
+
+    <section id="def" class="section">
+      <h2>1. 체의 정의</h2>
+      <p>
+        <strong>체(field)</strong> \(F\)는 덧셈과 곱셈이 정의된 집합으로, \((F,+)\)는 가환군, \((F \setminus \{0\}, \cdot)\)도 가환군이며, 분배법칙이 성립하는 구조입니다. 즉 “덧셈·곱셈·나눗셈(0 제외)이 자유로운 수의 세계”입니다.
+      </p>
+      <div class="analogy">
+        <strong>비유</strong>: 유리수, 실수, 복소수처럼 “네 가지 연산이 막힘 없이” 가능한 공간입니다. 보드게임의 “점수”를 실수로 두고 스케일을 바꾸거나 나누는 게 모두 가능한 상황이라고 보면 됩니다.
+      </div>
+    </section>
+
+    <section id="extension" class="section">
+      <h2>2. 체 확장</h2>
+      <p>체 \(K\)가 체 \(F\)를 부분체로 포함할 때(즉 \(F \subseteq K\)이고 \(F\)의 연산이 \(K\)의 연산과 맞을 때) <strong>\(K\)는 \(F\)의 체 확장(field extension)</strong>이라고 하고 \(K/F\)로 씁니다.</p>
+      <p>예: \(\mathbb{C}/\mathbb{R}\), \(\mathbb{R}/\mathbb{Q}\), \(\mathbb{Q}(\sqrt{2})/\mathbb{Q}\).</p>
+      <div class="analogy">
+        <strong>비유</strong>: “정수만 쓰는 게임”에서 “유리수까지 쓰는 게임”으로 규칙을 넓히는 것처럼, 수의 세계를 더 넓은 체로 확장하는 것입니다.
+      </div>
+      <div class="analogy analogy-design">
+        <strong>디자인 비유: 색 공간 확장</strong>
+        <p>
+          sRGB만 쓰다가 <strong>Adobe RGB</strong>나 <strong>Lab</strong>으로 옮기면 “표현 가능한 색의 범위”가 넓어집니다. 작은 색 공간을 큰 색 공간이 포함하는 것처럼, 체 확장 \(K/F\)는 “\(F\)에서 쓸 수 있던 것”을 \(K\)에서 더 많은 원소와 함께 쓰는 구조와 비슷합니다.
+        </p>
+      </div>
+    </section>
+
+    <section id="algebraic" class="section">
+      <h2>3. 대수적 원소</h2>
+      <p>\(K/F\) 체 확장에서 \(\alpha \in K\)가 \(F\) 계수의 0이 아닌 다항식의 근이면 <strong>\(F\) 위에서 대수적(algebraic)</strong>이라고 합니다. 대수적이지 않으면 <strong>초월적(transcendental)</strong>입니다.</p>
+      <p>예: \(\sqrt{2}\)는 \(\mathbb{Q}\) 위에서 대수적 (\(x^2-2=0\)). \(\pi\)는 \(\mathbb{Q}\) 위에서 초월적입니다.</p>
+    </section>
+
+    <section id="minimal" class="section">
+      <h2>4. 최소다항식</h2>
+      <p>\(F\) 위에서 대수적인 \(\alpha\)에 대해, \(\alpha\)를 근으로 갖는 \(F\) 계수 모닉(최고차계수 1) 다항식 중 차수가 가장 작은 것을 \(\alpha\)의 <strong>최소다항식(minimal polynomial)</strong> \(m_{\alpha,F}(x)\)라고 합니다. 이 다항식은 \(F\) 위에서 기약입니다.</p>
+      <p>\(\mathbb{Q}\) 위에서 \(\sqrt{2}\)의 최소다항식은 \(x^2 - 2\)입니다.</p>
+
+      <div class="exercise">
+        <div class="label">연습문제 4-1</div>
+        <div class="problem">\(\alpha = \sqrt[3]{2}\) (실수인 세제곱근)의 \(\mathbb{Q}\) 위 최소다항식을 구하세요.</div>
+        <button type="button" class="toggle-solution">해설 보기</button>
+        <div class="solution">
+          <div class="label">해설</div>
+          <p>\(\alpha^3 = 2\)이므로 \(\alpha\)는 \(x^3 - 2\)의 근입니다. \(x^3 - 2\)는 \(\mathbb{Q}\) 위에서 기약이므로(에이젠슈타인 판별 등) 최소다항식은 \(m_{\alpha,\mathbb{Q}}(x) = x^3 - 2\)입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="splitting" class="section">
+      <h2>5. 분해체</h2>
+      <p>\(F\) 위 다항식 \(f(x)\)에 대해, \(f\)가 일차식들의 곱으로 완전히 인수분해되는 \(F\)의 확장체 \(K\)를 \(f\)의 <strong>분해체(splitting field)</strong>라고 합니다. 즉 \(f\)의 모든 근을 \(K\)가 포함하고, \(K\)는 그 근들로 \(F\) 위에서 생성됩니다.</p>
+      <div class="analogy">
+        <strong>비유</strong>: 방정식 \(f(x)=0\)의 “모든 해가 살 수 있는 가장 작은 확장 세계”를 만드는 것입니다.
+      </div>
+    </section>
+
+    <section id="finite" class="section">
+      <h2>6. 유한체</h2>
+      <p>원소 개수가 유한인 체를 <strong>유한체(finite field)</strong>라고 합니다. 유한체의 크기는 반드시 소수 \(p\)에 대해 \(p^n\) 꼴이고, 같은 크기의 유한체는 동형으로 유일합니다. 그 체를 \(\mathbb{F}_{p^n}\)으로 씁니다.</p>
+      <p>\(\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}\)가 가장 기본적인 유한체입니다.</p>
+      <div class="analogy">
+        <strong>비유</strong>: “몇 가지 상태만 있는 디지털 세계”에서 덧셈·곱셈·나눗셈이 모두 정의된 구조입니다. 코딩이나 암호에서 쓰입니다.
+      </div>
+    </section>
+
+    <section id="galois-intro" class="section">
+      <h2>7. 갈루아 이론 입문</h2>
+      <p>갈루아 이론은 “체 확장”과 “그 확장의 대칭성(자기동형군)” 사이의 대응을 다룹니다. 정규 확장·분리 확장일 때 이 대응이 특히 잘 맞아, 방정식의 가해성(근의 공식 존재 여부)을 군론으로 해석할 수 있게 됩니다. 다음 4단계에서 자세히 다룹니다.</p>
+    </section>
+
+    <footer class="site-footer">
+      <nav class="site-footer-nav" aria-label="챕터 이동">
+        <a href="ring-theory.html">← 2단계 환론</a>
+        <span class="sep">·</span>
+        <a href="galois-theory.html">다음: 4단계 갈루아 이론 →</a>
+      </nav>
+    </footer>
+  </main>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, { delimiters: [{ left: '\\(', right: '\\)', display: false }, { left: '\\[', right: '\\]', display: true }] });
+      }
+    });
+  </script>
+</body>
+</html>

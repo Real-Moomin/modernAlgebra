@@ -68,6 +68,16 @@
           포토샵에서 레이어를 “더하기”(밝기 추가, 스크린 블렌드의 근본)와 “곱하기”(어두워지는 곱하기 블렌드)로 합성할 수 있습니다. 픽셀 값을 0~1로 두면, 덧셈에 해당하는 연산(클리핑 후)과 곱셈에 해당하는 연산이 함께 작동합니다. “색상 변환 행렬”(3×3 행렬로 RGB를 선형 변환)도 덧셈(효과 더하기)과 곱셈(변환 합성)이 있어 환을 이룹니다.
         </p>
       </div>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Z}\): 덧셈은 가환군, 곱셈은 결합·분배법칙 성립. 단위원 1. 가환환.</p>
+        <p>\(n \times n\) 정사각행렬 \(M_n(\mathbb{R})\): 덧셈·곱셈 정의됨, 단위원은 단위행렬. 곱셈이 가환 아닌 환.</p>
+        <p>\(\mathbb{Z}/6\mathbb{Z}\): \(\bar{2} \cdot \bar{3} = \bar{0}\)이므로 영인수 존재. 단위원 \(\bar{1}\).</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (환에서 \(0 \cdot a = 0\))</div>
+        <p>\(0 \cdot a = (0+0) \cdot a = 0 \cdot a + 0 \cdot a\). 양변에 \(-(0 \cdot a)\)를 더하면 \(0 = 0 \cdot a\). 마찬가지로 \(a \cdot 0 = 0\).</p>
+      </div>
 
       <div class="exercise">
         <div class="label">연습문제 1-1</div>
@@ -95,11 +105,27 @@
       <div class="analogy">
         <strong>비유</strong>: “2배 후 3배”나 “3배 후 2배”나 결과가 같은 것처럼, 곱셈 순서를 바꿔도 결과가 같으면 가환입니다.
       </div>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Z}\), \(\mathbb{Q}\), \(\mathbb{R}[x]\), \(\mathbb{Z}/n\mathbb{Z}\)는 가환환. \(M_n(\mathbb{R})\)(\(n \geq 2\))는 비가환환.</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (가환환이면 \((a+b)^2 = a^2 + 2ab + b^2\))</div>
+        <p>\((a+b)^2 = a^2 + ab + ba + b^2\). 가환성이면 \(ab = ba\)이므로 \(ab+ba = 2ab\). 따라서 \((a+b)^2 = a^2 + 2ab + b^2\).</p>
+      </div>
     </section>
 
     <section id="unity" class="section">
       <h2>3. 단위원</h2>
       <p>곱셈에 대한 항등원 \(1 \in R\)(즉 \(1 \cdot a = a \cdot 1 = a\))이 있으면 <strong>단위원(unity)을 가진 환</strong>이라고 합니다. 보통 “환”이라 하면 단위원 \(1 \neq 0\)을 갖는 것을 많이 다룹니다.</p>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Z}\), \(\mathbb{Z}/n\mathbb{Z}\), \(M_n(\mathbb{R})\)는 단위원 1(또는 \(\bar{1}\), \(I\))을 가진다. 짝수만 모은 환 \(2\mathbb{Z}\)는 곱셈의 항등원이 없어 단위원을 갖지 않는다.</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (단위원이 있으면 최대 하나)</div>
+        <p>\(1, 1'\)이 둘 다 항등원이면 \(1' = 1 \cdot 1' = 1\). 따라서 단위원은 최대 하나이다.</p>
+      </div>
     </section>
 
     <section id="zerodiv" class="section">
@@ -110,6 +136,14 @@
         <p>
           \(\mathbb{Z}/6\mathbb{Z}\)에서 \(2 \cdot 3 = 0\)입니다. 2도 3도 0이 아닌데 곱하면 0이 되므로, 2와 3은 영인수입니다. “서로 상쇄되는 규칙”이 있는 구조라고 보면 됩니다.
         </p>
+      </div>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Z}/6\mathbb{Z}\)에서 \(\bar{2} \cdot \bar{3} = \bar{0}\), \(\bar{2} \cdot \bar{2} = \bar{4} \neq \bar{0}\)이므로 \(\bar{2}, \bar{3}\)은 영인수. \(\mathbb{Z}/4\mathbb{Z}\)에서는 \(\bar{2} \cdot \bar{2} = \bar{0}\)이므로 \(\bar{2}\)가 영인수.</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (정역에서는 영인수 없음)</div>
+        <p>정역 \(R\)에서 \(ab=0\), \(a \neq 0\)이면 \(ab = a \cdot 0\)이고 \(a \neq 0\)이므로 소거법칙에 의해 \(b=0\). 따라서 정역에는 0이 아닌 영인수가 없다.</p>
       </div>
 
       <div class="exercise">
@@ -127,6 +161,14 @@
       <h2>5. 정역</h2>
       <p>단위원을 갖는 가환환 \(R\)에서 \(0\)이 아닌 두 원소의 곱이 절대 \(0\)이 아니면(즉 영인수가 없으면) <strong>정역(integral domain)</strong>입니다. 정수 \(\mathbb{Z}\), 체 위의 다항식환 등이 정역입니다.</p>
       <p>정역에서는 \(ab = ac\)이고 \(a \neq 0\)이면 \(b = c\)(소거법칙)가 성립합니다.</p>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Z}\), \(\mathbb{Q}[x]\), \(\mathbb{R}[x]\)는 정역. \(\mathbb{Z}/6\mathbb{Z}\)는 \(\bar{2}\cdot\bar{3}=\bar{0}\)이므로 정역이 아니다. 소수 \(p\)에 대해 \(\mathbb{Z}/p\mathbb{Z}\)는 체이므로 정역이다.</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (정역에서의 소거법칙)</div>
+        <p>\(ab = ac\), \(a \neq 0\)이면 \(ab - ac = a(b-c) = 0\). 정역에서는 영인수가 없고 \(a \neq 0\)이므로 \(b-c = 0\), 즉 \(b = c\).</p>
+      </div>
     </section>
 
     <section id="field" class="section">
@@ -134,6 +176,14 @@
       <p>단위원을 갖는 가환환 \(R\)에서 \(0\)이 아닌 모든 원소가 곱셈에 대해 역원을 가지면 <strong>체(field)</strong>입니다. \(\mathbb{Q}, \mathbb{R}, \mathbb{C}\), 그리고 소수 \(p\)에 대한 \(\mathbb{Z}/p\mathbb{Z}\)가 체입니다.</p>
       <div class="analogy">
         <strong>비유</strong>: “나눗셈이 항상 가능한” 수의 세계. 보드게임에서 “점수를 절반으로 줄이기”가 항상 한 가지 방법으로만 결정되는 구조라고 보면 됩니다.
+      </div>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Q}, \mathbb{R}, \mathbb{C}\), \(\mathbb{Z}/p\mathbb{Z}\)(\(p\) 소수)는 체. \(\mathbb{Z}\)는 \(2^{-1} \notin \mathbb{Z}\)이므로 체가 아니다.</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (체는 정역)</div>
+        <p>체 \(F\)에서 \(ab=0\), \(a \neq 0\)이면 \(b = a^{-1}(ab) = 0\). 따라서 체에는 영인수가 없고 정역이다.</p>
       </div>
     </section>
 
@@ -145,6 +195,14 @@
         <p>
           정수에서 “3의 배수”만 모은 집합은 아이디얼입니다. 어떤 정수에 3의 배수를 곱하거나 더해도 여전히 3의 배수이기 때문입니다. 몫을 만들 때 “이 묶음을 0으로 보자”는 역할을 합니다.
         </p>
+      </div>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Z}\)에서 \(n\mathbb{Z} = \{nk : k \in \mathbb{Z}\}\)는 아이디얼: 덧셈에 닫혀 있고, \(r \cdot (nk) = n(rk) \in n\mathbb{Z}\). \(F[x]\)에서 \((f(x)) = f(x)F[x]\)(\(f\)의 배수 전체)도 아이디얼이다.</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (준동형의 핵은 아이디얼)</div>
+        <p>\(\phi : R \to S\)가 환 준동형이면 \(\ker\phi\)는 덧셈에 대해 부분군. \(r \in R\), \(a \in \ker\phi\)일 때 \(\phi(ra) = \phi(r)\phi(a) = \phi(r) \cdot 0 = 0\)이므로 \(ra \in \ker\phi\). 마찬가지로 \(ar \in \ker\phi\). 따라서 \(\ker\phi\)는 아이디얼이다.</p>
       </div>
 
       <div class="exercise">
@@ -162,12 +220,28 @@
       <h2>8. 몫환</h2>
       <p>\(I\)가 환 \(R\)의 아이디얼일 때, 동치류 \(r + I\)들의 집합에 \((r+I)+(s+I)=(r+s)+I\), \((r+I)(s+I)=rs+I\)로 연산을 주면 환이 됩니다. 이를 <strong>몫환(quotient ring)</strong> \(R/I\)라고 합니다.</p>
       <p>\(\mathbb{Z}/n\mathbb{Z}\)가 대표적인 몫환입니다.</p>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Z}/6\mathbb{Z} = \mathbb{Z}/6\mathbb{Z}\): 원소 \(\bar{0},\bar{1},\ldots,\bar{5}\). \(\bar{2}+\bar{4}=\bar{0}\), \(\bar{2}\cdot\bar{3}=\bar{0}\). 다항식환 \(\mathbb{R}[x]/(x^2+1)\)은 \(\bar{x}^2 = -\bar{1}\)인 환으로, \(\mathbb{C}\)와 동형이다.</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (몫환 연산의 잘 정의됨)</div>
+        <p>\(r' \in r+I\), \(s' \in s+I\)이면 \(r' = r+a\), \(s' = s+b\) (\(a,b \in I\)). \(r's' = rs + (rb+as+ab)\). \(I\)가 아이디얼이므로 \(rb, as, ab \in I\)이고 \(r's' \in rs+I\). 따라서 \((r'+I)(s'+I) = rs+I\)로 대표에 무관하게 정의된다.</p>
+      </div>
     </section>
 
     <section id="homomorphism" class="section">
       <h2>9. 환 준동형</h2>
       <p>두 환 \(R, S\) 사이의 함수 \(\phi : R \to S\)가 \(\phi(a+b)=\phi(a)+\phi(b)\), \(\phi(ab)=\phi(a)\phi(b)\)를 만족하고, 보통 \(\phi(1_R)=1_S\)를 요구하면 <strong>환 준동형(ring homomorphism)</strong>입니다. 군 준동형처럼 “구조를 보존”합니다.</p>
       <p>핵 \(\ker \phi = \{ r \in R : \phi(r)=0 \}\)는 항상 아이디얼이 됩니다.</p>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\phi : \mathbb{Z} \to \mathbb{Z}/n\mathbb{Z}\), \(\phi(k)=\bar{k}\): \(\phi(k+m)=\overline{k+m}=\bar{k}+\bar{m}\), \(\phi(km)=\overline{km}=\bar{k}\bar{m}\). \(\ker\phi = n\mathbb{Z}\). \(\pi : \mathbb{R}[x] \to \mathbb{R}\), \(\pi(f)=f(0)\)(상수항)도 환 준동형, \(\ker\pi = (x)\).</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (동형정리 \(R/\ker\phi \cong \mathrm{Im}\,\phi\))</div>
+        <p>\(\psi(r+\ker\phi) = \phi(r)\)로 정의하면 \(r+\ker\phi = r'+\ker\phi \Leftrightarrow \phi(r)=\phi(r')\)이므로 잘 정의됨. 덧셈·곱셈을 보존하고 전사. \(\psi(r+\ker\phi)=0 \Leftrightarrow r \in \ker\phi\)이므로 단사. 따라서 \(\psi\)는 동형이다.</p>
+      </div>
     </section>
 
     <section id="pid-ufd" class="section">
@@ -180,6 +254,14 @@
       </p>
       <div class="analogy">
         <strong>비유</strong>: 정수에서 소인수분해가 “유일”한 것처럼, 환에서도 “쪼개지는 단위”가 잘 정의되어 유일하게 쪼개지면 UFD입니다.
+      </div>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Z}\): 모든 아이디얼이 \(n\mathbb{Z}=(n)\) 형태이므로 PID. 소인수분해 유일하므로 UFD. \(F[x]\)(체 위 1변수 다항식)도 PID이자 UFD. \(\mathbb{Z}[x]\)는 UFD이지만 \((2,x)\)가 한 원소로 생성되지 않아 PID가 아니다.</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (PID \(\Rightarrow\) UFD 스케치)</div>
+        <p>PID에서 소원소와 기약원이 동치임을 보인다. 0이 아닌 비가역원이 기약원의 곱으로 분해됨을 보이고, 유일성은 소원소 조건으로 보인다.</p>
       </div>
     </section>
 

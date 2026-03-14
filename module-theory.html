@@ -50,18 +50,43 @@
           벡터 공간은 체 위에서 “스칼라 곱”이 있는 가환군입니다. 체 대신 환 \(R\)을 쓰면 모듈이 됩니다. 예: 정수 \(\mathbb{Z}\) 위에서 어떤 가환군이든 “정수 배”를 정의할 수 있으므로, 가환군은 \(\mathbb{Z}\)-모듈과 같습니다.
         </p>
       </div>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Z}\)-모듈 = 가환군(\(n \cdot a\)를 \(a+\cdots+a\)로). 벡터공간 \(V\) over 체 \(F\)는 \(F\)-모듈. \(R\) 자신은 \(R\) 위 왼쪽(또는 오른쪽) 모듈. \(R^n\)(\(n\)개 직합)도 \(R\)-모듈.</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (모듈 조건에서 \(0 \cdot m = 0\))</div>
+        <p>\(0 \cdot m = (0+0) \cdot m = 0 \cdot m + 0 \cdot m\). 양변에 \(-(0 \cdot m)\)를 더하면 \(0 = 0 \cdot m\). \((-r)m = -(rm)\)은 \(rm + (-r)m = (r+(-r))m = 0 \cdot m = 0\)에서.</p>
+      </div>
       <p>오른쪽 \(R\)-모듈은 \(m \cdot r\) 형태로 스칼라를 오른쪽에 곱하는 경우입니다.</p>
     </section>
 
     <section id="submodule" class="section">
       <h2>2. 부분모듈</h2>
       <p>\(M\)이 \(R\)-모듈일 때, 부분집합 \(N \subseteq M\)이 덧셈에 대해 닫혀 있고 \(r \in R,\, n \in N \Rightarrow rn \in N\)이면 <strong>부분모듈(submodule)</strong>입니다. 벡터 공간의 부분공간과 같은 역할입니다.</p>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Z}\)를 \(\mathbb{Z}\)-모듈로 보면 부분모듈은 \(n\mathbb{Z}\). 벡터공간 \(V\)의 부분공간은 \(F\)-부분모듈. 환 \(R\)의 아이디얼 \(I\)는 \(R\)(자기 자신을 \(R\)-모듈로 볼 때)의 부분모듈.</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (부분모듈의 교집합)</div>
+        <p>\(\{N_i\}\)가 \(M\)의 부분모듈들이면 \(\bigcap N_i\)도 부분모듈: \(n,n' \in \bigcap N_i \Rightarrow n+n' \in N_i\) for all \(i\); \(rn \in N_i\) for all \(i\). \(0 \in \bigcap N_i\).</p>
+      </div>
     </section>
 
     <section id="homomorphism" class="section">
       <h2>3. 모듈 준동형</h2>
       <p>두 \(R\)-모듈 \(M, N\) 사이의 함수 \(f : M \to N\)이 \(f(m+m')=f(m)+f(m')\), \(f(rm)=r f(m)\)을 만족하면 <strong>\(R\)-선형사상(모듈 준동형)</strong>입니다.</p>
       <p>핵 \(\ker f\)와 상 \(\mathrm{Im}\,f\)는 각각 \(M\)의 부분모듈, \(N\)의 부분모듈입니다.</p>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Z} \to \mathbb{Z}/n\mathbb{Z}\), \(k \mapsto \bar{k}\): \(\mathbb{Z}\)-선형. \(F[x]\) 위에서 \(F[x] \to F\), \(f \mapsto f(0)\): \(F[x]\)-선형이 아님(\(x \cdot 1 \mapsto 0\)이지만 \(x \cdot (1 \mapsto 1) = 0 \neq 1\)).</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (핵·상은 부분모듈 & 제1동형정리)</div>
+        <p>\(f(rm)=rf(m)\)이므로 \(\ker f\), \(\mathrm{Im}\,f\)는 부분모듈. \(\psi(m+\ker f)=f(m)\)로 정의하면 \(M/\ker f \cong \mathrm{Im}\,f\)(동형정리).</p>
+        <p>\(\psi(m+\ker f) = f(m)\)로 정의하면 잘 정의되고, \(R\)-선형이며 전사. \(\psi(m+\ker f)=0 \Leftrightarrow f(m)=0 \Leftrightarrow m \in \ker f\)이므로 단사. 따라서 \(\psi\)는 동형.</p>
+      </div>
     </section>
 
     <section id="free" class="section">
@@ -71,12 +96,28 @@
       <div class="analogy">
         <strong>비유</strong>: 벡터 공간에서 “기저로 생성된 공간”이 자유모듈의 환 버전입니다.
       </div>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(R^n\): \(R\) 위 자유모듈(기저 \(e_1,\ldots,e_n\)). \(\mathbb{Z}^n\): 자유 \(\mathbb{Z}\)-모듈. \(\mathbb{Z}/n\mathbb{Z}\): \(\mathbb{Z}\)-모듈이지만 자유가 아님(\(n \cdot \bar{1}=\bar{0}\)).</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (자유모듈의 보편성)</div>
+        <p>\(R^{(X)}\)는 “집합 \(X\)에서 \(N\)으로 가는 함수 중 유한 개만 0이 아닌 것”과 동형. \(X\)에서 임의의 \(R\)-모듈 \(N\)으로 가는 함수는 선형으로 유일하게 \(R^{(X)} \to N\)으로 확장됨(보편 성질).</p>
+      </div>
     </section>
 
     <section id="noether" class="section">
       <h2>5. Noether 모듈</h2>
       <p>\(R\)-모듈 \(M\)이 <strong>Noether</strong>라는 것은 부분모듈의 증가열 \(N_1 \subseteq N_2 \subseteq \cdots\)이 항상 유한 단계에서 멈춘다는 뜻입니다(\(N_k = N_{k+1} = \cdots\)). 환 \(R\)이 자기 자신을 \(R\)-모듈로 볼 때 Noether이면 <strong>Noether 환</strong>입니다.</p>
       <p>Noether 조건은 “유한 생성” 등과 밀접하게 연결되어 대수학 전반에서 중요합니다.</p>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Z}\): 아이디얼이 \(n\mathbb{Z}\) 형태뿐이므로 증가열이 유한 단계에서 멈춤 → Noether 환. \(\mathbb{Q}[x_1,x_2,\ldots]\)(무한 변수): Noether 아님. PID는 Noether 환.</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (PID \(\Rightarrow\) Noether)</div>
+        <p>\(R\)이 PID일 때 아이디얼 증가열 \(I_1 \subseteq I_2 \subseteq \cdots\)를 생각하면 \(I = \bigcup I_j\)도 아이디얼. PID이므로 \(I=(a)\). \(a \in I_k\)인 \(k\)가 있으면 \(I = I_k = I_{k+1} = \cdots\).</p>
+      </div>
     </section>
 
     <section id="structure" class="section">
@@ -89,6 +130,14 @@
       </p>
       <div class="analogy">
         <strong>비유</strong>: 복잡한 모듈을 “자유 부분”과 “꼬인 부분(torsion)”으로 쪼개어 이해하는 것입니다.
+      </div>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>유한 생성 \(\mathbb{Z}\)-모듈(가환군): \(\mathbb{Z}^r \oplus \mathbb{Z}/d_1\mathbb{Z} \oplus \cdots \oplus \mathbb{Z}/d_k\mathbb{Z}\) 형태(\(d_1 \mid d_2 \mid \cdots\)). \(\mathbb{Z}/6\mathbb{Z} \cong \mathbb{Z}/2\mathbb{Z} \oplus \mathbb{Z}/3\mathbb{Z}\)(중국인의 나머지 정리).</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (유한 생성 가환군 기본정리 스케치)</div>
+        <p>\(\mathbb{Z}^n\)의 부분모듈은 자유 \(\mathbb{Z}\)-모듈(정수 행렬의 스미스 표준형). 몫을 취하면 \(R^k \oplus R/(a_1) \oplus \cdots\) 형태. 유일성은 초등제수 등으로.</p>
       </div>
 
       <div class="exercise">

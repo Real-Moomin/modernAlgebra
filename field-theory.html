@@ -47,6 +47,14 @@
       <div class="analogy">
         <strong>비유</strong>: 유리수, 실수, 복소수처럼 “네 가지 연산이 막힘 없이” 가능한 공간입니다. 보드게임의 “점수”를 실수로 두고 스케일을 바꾸거나 나누는 게 모두 가능한 상황이라고 보면 됩니다.
       </div>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Q}, \mathbb{R}, \mathbb{C}\): 덧셈·곱셈·나눗셈(0 제외)이 자유로움. \(\mathbb{Z}/p\mathbb{Z}\)(\(p\) 소수): 유한체, 원소 \(p\)개. \(\mathbb{Q}(\sqrt{2}) = \{ a + b\sqrt{2} : a,b \in \mathbb{Q} \}\): \(\sqrt{2}\)를 추가한 체.</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (체에서 \(0 \neq 1\))</div>
+        <p>체의 정의에서 \((F \setminus \{0\}, \cdot)\)가 군이므로 “0이 아닌 원소”가 최소 하나 있어야 한다. 즉 \(F \setminus \{0\} \neq \varnothing\)이므로 \(0 \neq 1\).</p>
+      </div>
     </section>
 
     <section id="extension" class="section">
@@ -62,18 +70,42 @@
           sRGB만 쓰다가 <strong>Adobe RGB</strong>나 <strong>Lab</strong>으로 옮기면 “표현 가능한 색의 범위”가 넓어집니다. 작은 색 공간을 큰 색 공간이 포함하는 것처럼, 체 확장 \(K/F\)는 “\(F\)에서 쓸 수 있던 것”을 \(K\)에서 더 많은 원소와 함께 쓰는 구조와 비슷합니다.
         </p>
       </div>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{Q}(\sqrt{2})/\mathbb{Q}\): \(\mathbb{Q}\)에 \(\sqrt{2}\)를 추가. \(\mathbb{C}/\mathbb{R}\): \(i\) 추가. \(\mathbb{R}/\mathbb{Q}\): 무한 차수 확장(초월적 원소 포함).</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (확장체의 차수)</div>
+        <p>\(K/F\)가 유한 확장이면 \(K\)는 \(F\) 위 유한차원 벡터공간. 그 차원을 \([K:F]\)(확장 차수)라 쓴다. \(F \subseteq L \subseteq K\)이면 \([K:F] = [K:L][L:F]\).</p>
+      </div>
     </section>
 
     <section id="algebraic" class="section">
       <h2>3. 대수적 원소</h2>
       <p>\(K/F\) 체 확장에서 \(\alpha \in K\)가 \(F\) 계수의 0이 아닌 다항식의 근이면 <strong>\(F\) 위에서 대수적(algebraic)</strong>이라고 합니다. 대수적이지 않으면 <strong>초월적(transcendental)</strong>입니다.</p>
       <p>예: \(\sqrt{2}\)는 \(\mathbb{Q}\) 위에서 대수적 (\(x^2-2=0\)). \(\pi\)는 \(\mathbb{Q}\) 위에서 초월적입니다.</p>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\sqrt{2}\): \(x^2-2=0\)의 근. \(\sqrt[3]{2}\): \(x^3-2=0\)의 근. \(i\): \(x^2+1=0\)의 근. \(\pi, e\): \(\mathbb{Q}\) 위에서 초월적(린데만-바이어슈트라스 등).</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (대수적 원소의 최소다항식 존재)</div>
+        <p>\(\alpha\)가 \(F\) 위 대수적이면 \(f(\alpha)=0\)인 0 아닌 \(f \in F[x]\)가 있다. 그 중 차수가 최소인 모닉 다항식이 최소다항식 \(m_{\alpha,F}(x)\)이고, \(F\) 위에서 기약이다.</p>
+      </div>
     </section>
 
     <section id="minimal" class="section">
       <h2>4. 최소다항식</h2>
       <p>\(F\) 위에서 대수적인 \(\alpha\)에 대해, \(\alpha\)를 근으로 갖는 \(F\) 계수 모닉(최고차계수 1) 다항식 중 차수가 가장 작은 것을 \(\alpha\)의 <strong>최소다항식(minimal polynomial)</strong> \(m_{\alpha,F}(x)\)라고 합니다. 이 다항식은 \(F\) 위에서 기약입니다.</p>
       <p>\(\mathbb{Q}\) 위에서 \(\sqrt{2}\)의 최소다항식은 \(x^2 - 2\)입니다.</p>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\sqrt{2}\)의 \(\mathbb{Q}\) 위 최소다항식: \(x^2-2\). \(i\)의 \(\mathbb{R}\) 위 최소다항식: \(x^2+1\). \(\sqrt[3]{2}\)의 \(\mathbb{Q}\) 위: \(x^3-2\)(기약).</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (최소다항식의 기약성)</div>
+        <p>\(m(x)=m_{\alpha,F}(x)\)가 기약이 아니면 \(m=gh\), \(\deg g, \deg h \geq 1\). \(\alpha\)가 근이므로 \(g(\alpha)h(\alpha)=0\). \(F[x]\)는 정역이므로 \(g(\alpha)=0\) 또는 \(h(\alpha)=0\). 그러면 \(m\)보다 차수가 작은 \(\alpha\)의 만족 다항식이 있어 최소성에 모순. 따라서 \(m\)은 기약.</p>
+      </div>
 
       <div class="exercise">
         <div class="label">연습문제 4-1</div>
@@ -92,6 +124,14 @@
       <div class="analogy">
         <strong>비유</strong>: 방정식 \(f(x)=0\)의 “모든 해가 살 수 있는 가장 작은 확장 세계”를 만드는 것입니다.
       </div>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(f(x)=x^2-2\)의 분해체: \(\mathbb{Q}(\sqrt{2})\) (또는 \(\mathbb{Q}(\sqrt{2}, -\sqrt{2})=\mathbb{Q}(\sqrt{2})\)). \(f(x)=x^3-2\)의 분해체: \(\mathbb{Q}(\sqrt[3]{2}, \omega)\)(\(\omega\)는 1의 primitive 3제곱근).</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (분해체의 존재)</div>
+        <p>\(F\)와 \(f(x) \in F[x]\)에 대해, \(f\)의 한 근 \(\alpha_1\)을 추가한 확장 \(F(\alpha_1)\)을 만들고, 나머지 인수를 그 위에서 쪼개 나가면 유한 단계 후 \(f\)가 일차식 곱으로 완전 분해되는 확장체 \(K\)를 얻는다. \(K\)는 \(F\)와 \(f\)의 근들로 생성되므로 분해체.</p>
+      </div>
     </section>
 
     <section id="finite" class="section">
@@ -100,6 +140,14 @@
       <p>\(\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}\)가 가장 기본적인 유한체입니다.</p>
       <div class="analogy">
         <strong>비유</strong>: “몇 가지 상태만 있는 디지털 세계”에서 덧셈·곱셈·나눗셈이 모두 정의된 구조입니다. 코딩이나 암호에서 쓰입니다.
+      </div>
+      <div class="example">
+        <div class="label">예시</div>
+        <p>\(\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}\): 원소 \(p\)개. \(\mathbb{F}_4\): 원소 4개, \(\mathbb{F}_2[x]/(x^2+x+1)\)와 동형. \(\mathbb{F}_{p^n}\)은 같은 크기면 동형으로 유일.</p>
+      </div>
+      <div class="proof">
+        <div class="label">증명 (유한체의 크기는 \(p^n\) 꼴)</div>
+        <p>유한체 \(F\)의 표수는 소수 \(p\)이고, \(F\)는 \(\mathbb{F}_p\) 위 유한차원 벡터공간. 차원을 \(n\)이라 하면 \(|F| = p^n\).</p>
       </div>
     </section>
 
